@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.B5D1">
         <activity
+            android:name=".NoViewBindingActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

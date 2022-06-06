@@ -2,31 +2,41 @@ package com.gzeinnumer.b5d1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.gzeinnumer.b5d1.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
-    //deklarasi
-    Button btnClickMe;
-    TextView tvExample;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        //inisialisasi
-        btnClickMe = findViewById(R.id.btn_click_me);
-        tvExample = findViewById(R.id.tv_example);
-
-        //using/consume
-        btnClickMe.setOnClickListener(new View.OnClickListener() {
+        binding.btnClickMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvExample.setText("Eh Keganti!!!!");
+                binding.tvExample.setText("Eh Keganti!!!!");
+            }
+        });
+
+        //
+        abaikanAjaIni();
+    }
+
+    private void abaikanAjaIni() {
+        binding.btnToNoViewBinding.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NoViewBindingActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -21,9 +21,9 @@
         android:text="Click Me" />
 
     <Button
-        android:id="@+id/btn_to_no_view_binding"
+        android:id="@+id/btn_click_me_v2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To No View Binding" />
+        android:text="Click Me" />
 
 </LinearLayout>
